@@ -1,18 +1,9 @@
 import './Main.css'
 
-const Main = ({aa}) => {
-/*
-    const getHideStatus = () => {
-       let statusdd = {display : displayStatus};
+const Main = () => {
 
-    }
-*/
 
-    const checkLogin = () => {
-        const loginInfo = {"id": "id1111", "pw": "pw1111"}
 
-    }
-   // getHideStatus();
 
     return (
         <>
