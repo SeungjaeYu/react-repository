@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import Login from "./component/Login";
+import Main from "./component/Main";
+import {useEffect, useState} from "react";
 
 function App() {
+
+
+  const [isLogin,setIsLogin] = useState(false);
+
+  const [isMain, setIsMain] = useState(<Login isLogin ={setIsLogin}/>)
+
+    useEffect(() => {
+        if(!isLogin) {
+            setIsMain(<Login isLogin ={setIsLogin}/>);
+        } else {
+            setIsMain(<Main isLogin ={setIsLogin} />)
+        }
+
+    },[isLogin])
+
+
+
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        {isMain}
     </div>
   );
 }
